@@ -1,3 +1,4 @@
+#! /usr/bin/bash
 #THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 #IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 #FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -21,7 +22,7 @@ if [ -f ${NB} ]; then
     jupyter nbconvert --to latex --output=${TEMP} ${NB}
 
     # replace .png with .pdf, update title and add author
-    sed -e 's/.png}/.pdf}/g' -e "s/$1/$2/" -e "/title/a \\\\\author{$3}" ${TEMP} > ${TEX}
+    sed -e 's/.png}/.pdf}/g' -e "s/$1/$2/" -e "/title{/a \\\\\author{$3}" ${TEMP} > ${TEX}
     rm ${TEMP}
 else
     echo "File ${NB} does not exist..."

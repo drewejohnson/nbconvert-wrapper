@@ -9,5 +9,5 @@ The script requires three arguments:
   1. `author` - author(s)
 
 Currently, all `.png` extensions are converted to `.pdf`.
-Support for declaring graphics extension preferrence will come soon, 
+Support for declaring graphics extension preference will come soon, 
 likely the first instance I need it....
